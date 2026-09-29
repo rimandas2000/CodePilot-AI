@@ -1,0 +1,701 @@
+AI CODING TUTOR
+START-TO-END RUN GUIDE + EXAMPLES
+
+==================================================
+PART 1 - START THE PROJECT
+==================================================
+
+PROJECT FOLDER:
+
+CodePilot_AI_Complete
+
+STEP 1:
+Open the project folder in VS Code.
+
+STEP 2:
+Open:
+
+Terminal -> New Terminal
+
+STEP 3:
+Activate the virtual environment:
+
+.venv\Scripts\Activate.ps1
+
+You should see:
+
+(.venv) PS C:\Users\YourName\Downloads\CodePilot_AI_Complete>
+
+STEP 4:
+Install requirements if needed:
+
+pip install -r requirements.txt
+
+STEP 5:
+Check the .env file in the MAIN project folder.
+
+It should contain:
+
+GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
+GEMINI_MODEL=gemini-3.6-flash
+
+Never share your API key.
+
+STEP 6:
+If you added or changed knowledge files, update the RAG database:
+
+python backend/ingest.py
+
+STEP 7:
+Start the application:
+
+python -m streamlit run backend/app.py
+
+STEP 8:
+Open:
+
+http://localhost:8501
+
+==================================================
+PART 2 - BASIC TEST
+==================================================
+
+Programming language:
+Python
+
+Tutor mode:
+Debug my code
+
+Question:
+
+Why does this code give an IndexError?
+
+numbers = [10, 20, 30]
+print(numbers[3])
+
+Expected idea:
+
+Python list indexes start from 0.
+The valid indexes are 0, 1 and 2.
+Index 3 does not exist.
+
+Correct code:
+
+numbers = [10, 20, 30]
+print(numbers[2])
+
+
+==================================================
+PART 3 - LEARN A CONCEPT EXAMPLES
+==================================================
+
+EXAMPLE 1 - Python Variables
+
+Programming language:
+Python
+
+Tutor mode:
+Learn a concept
+
+Question:
+
+Explain Python variables to me like I am a beginner.
+
+--------------------------------------------------
+
+EXAMPLE 2 - Python Loops
+
+Question:
+
+Explain for loops in Python with three simple examples.
+
+--------------------------------------------------
+
+EXAMPLE 3 - C Arrays
+
+Programming language:
+C
+
+Question:
+
+Explain arrays in C to a beginner with an example.
+
+--------------------------------------------------
+
+EXAMPLE 4 - Big O
+
+Programming language:
+General
+
+Question:
+
+What is Big O notation? Explain O(1), O(n), O(log n), and O(n^2)
+with simple examples.
+
+
+==================================================
+PART 4 - DEBUG MY CODE EXAMPLES
+==================================================
+
+EXAMPLE 1 - IndexError
+
+Programming language:
+Python
+
+Tutor mode:
+Debug my code
+
+Question:
+
+Find and fix the error:
+
+numbers = [10, 20, 30]
+
+for i in range(4):
+    print(numbers[i])
+
+Ask the AI to explain:
+1. What is wrong?
+2. Why does it happen?
+3. How can I fix it?
+
+
+--------------------------------------------------
+EXAMPLE 2 - NameError
+
+Question:
+
+Debug this Python code:
+
+print(total)
+total = 100
+
+Expected idea:
+
+The variable is used before it is defined.
+
+Correct example:
+
+total = 100
+print(total)
+
+
+--------------------------------------------------
+EXAMPLE 3 - TypeError
+
+Question:
+
+Debug this code:
+
+age = 20
+print("My age is " + age)
+
+Ask for the reason and two possible fixes.
+
+
+--------------------------------------------------
+EXAMPLE 4 - C Array Problem
+
+Programming language:
+C
+
+Question:
+
+Find the problem in this code:
+
+#include <stdio.h>
+
+int main() {
+    int numbers[3] = {10, 20, 30};
+    printf("%d", numbers[3]);
+    return 0;
+}
+
+Ask the tutor to explain array indexing and undefined behavior.
+
+
+==================================================
+PART 5 - EXPLAIN MY CODE EXAMPLES
+==================================================
+
+EXAMPLE 1 - Factorial
+
+Programming language:
+Python
+
+Tutor mode:
+Explain my code
+
+Question:
+
+Explain this code line by line:
+
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))
+
+
+--------------------------------------------------
+EXAMPLE 2 - Linear Search
+
+Question:
+
+Explain this code step by step:
+
+def linear_search(arr, target):
+    for i, value in enumerate(arr):
+        if value == target:
+            return i
+    return -1
+
+Explain the algorithm and its time complexity.
+
+
+--------------------------------------------------
+EXAMPLE 3 - C Function
+
+Programming language:
+C
+
+Question:
+
+Explain this code for a beginner:
+
+int add(int a, int b) {
+    return a + b;
+}
+
+Explain parameters, return value, and function call.
+
+
+==================================================
+PART 6 - OPTIMIZE MY CODE EXAMPLES
+==================================================
+
+EXAMPLE 1 - Sorting
+
+Programming language:
+Python
+
+Tutor mode:
+Optimize my code
+
+Question:
+
+Optimize this code and explain the time complexity:
+
+numbers = [5, 2, 8, 1, 9]
+
+for i in range(len(numbers)):
+    for j in range(i + 1, len(numbers)):
+        if numbers[i] > numbers[j]:
+            numbers[i], numbers[j] = numbers[j], numbers[i]
+
+print(numbers)
+
+Ask:
+- Is there a faster or simpler solution?
+- What is the time complexity?
+- Why is the optimized version better?
+
+
+--------------------------------------------------
+EXAMPLE 2 - Search
+
+Question:
+
+Can you optimize this code?
+
+numbers = [10, 20, 30, 40, 50]
+
+target = 40
+
+for number in numbers:
+    if number == target:
+        print("Found")
+        break
+
+Ask the AI to explain when binary search would be better.
+
+
+==================================================
+PART 7 - GENERATE UNIT TESTS EXAMPLES
+==================================================
+
+EXAMPLE 1
+
+Programming language:
+Python
+
+Tutor mode:
+Generate unit tests
+
+Question:
+
+Create unit tests for this function:
+
+def add(a, b):
+    return a + b
+
+Include:
+- Normal values
+- Zero
+- Negative numbers
+- Large numbers
+
+
+--------------------------------------------------
+EXAMPLE 2
+
+Question:
+
+Create unit tests for:
+
+def is_even(number):
+    return number % 2 == 0
+
+Test:
+- Even numbers
+- Odd numbers
+- Zero
+- Negative numbers
+
+
+--------------------------------------------------
+EXAMPLE 3
+
+Question:
+
+Generate unit tests for a factorial function.
+
+Include:
+- factorial(0)
+- factorial(1)
+- factorial(5)
+- Invalid input cases
+
+
+==================================================
+PART 8 - PRACTICE QUESTIONS EXAMPLES
+==================================================
+
+Programming language:
+Python
+
+Tutor mode:
+Practice questions
+
+EXAMPLE 1:
+
+Give me 10 Python questions for a beginner.
+Do not give the answers immediately.
+
+
+EXAMPLE 2:
+
+Give me 5 C programming questions about loops and arrays.
+After I answer each question, evaluate my answer.
+
+
+EXAMPLE 3:
+
+Create a Python mini quiz about:
+- Variables
+- Lists
+- Loops
+- Functions
+- Dictionaries
+
+Give me one question at a time.
+
+
+==================================================
+PART 9 - RAG TEST EXAMPLES
+==================================================
+
+These examples test whether the application is actually retrieving
+information from the local knowledge base.
+
+EXAMPLE 1:
+
+Why does Python use zero-based indexing for lists?
+
+EXAMPLE 2:
+
+What is the time complexity of linear search?
+
+EXAMPLE 3:
+
+Explain binary search and its time complexity.
+
+EXAMPLE 4:
+
+What does LIFO mean in a stack?
+
+EXAMPLE 5:
+
+What does FIFO mean in a queue?
+
+EXAMPLE 6:
+
+What happens when a C program accesses an array outside its
+valid boundary?
+
+After the answer, open:
+
+Retrieved sources
+
+You should see the knowledge documents used by the RAG system.
+
+
+==================================================
+PART 10 - DIFFERENT LANGUAGE TESTS
+==================================================
+
+PYTHON:
+
+Programming language:
+Python
+
+Question:
+
+Explain Python functions with a simple example.
+
+
+C:
+
+Programming language:
+C
+
+Question:
+
+Explain pointers in C to a beginner.
+
+
+C++:
+
+Programming language:
+C++
+
+Question:
+
+Explain classes and objects in C++ with a simple example.
+
+
+JAVA:
+
+Programming language:
+Java
+
+Question:
+
+Explain inheritance in Java with a simple example.
+
+
+JAVASCRIPT:
+
+Programming language:
+JavaScript
+
+Question:
+
+Explain arrays and functions in JavaScript with examples.
+
+
+GENERAL:
+
+Programming language:
+General
+
+Question:
+
+What is the difference between an array, stack, and queue?
+
+
+==================================================
+PART 11 - GOOD PROJECT DEMO QUESTIONS
+==================================================
+
+If you need to demonstrate the project to your teacher, use these:
+
+DEMO 1:
+
+Explain binary search and give me a Python implementation.
+Also explain its time complexity.
+
+
+DEMO 2:
+
+Debug this Python program:
+
+numbers = [1, 2, 3]
+
+for i in range(4):
+    print(numbers[i])
+
+
+DEMO 3:
+
+Explain this code line by line:
+
+def add(a, b):
+    return a + b
+
+print(add(10, 20))
+
+
+DEMO 4:
+
+Optimize this sorting algorithm and explain why the optimized
+version is better.
+
+
+DEMO 5:
+
+Generate unit tests for a Python function that checks whether
+a number is prime.
+
+
+DEMO 6:
+
+Give me five beginner Python practice questions and evaluate
+my answers.
+
+
+==================================================
+PART 12 - HOW TO SHOW THAT IT IS RAG
+==================================================
+
+For your college presentation:
+
+1. Ask a programming question.
+
+2. Wait for the answer.
+
+3. Open the "Retrieved sources" section.
+
+4. Show that the application retrieved information from the
+   local knowledge base.
+
+Explain:
+
+"The application first searches the ChromaDB vector database
+for relevant programming knowledge. The retrieved context is
+then provided to the Gemini model, which generates the final
+answer."
+
+RAG FLOW:
+
+Student Question
+       |
+       v
+Query
+       |
+       v
+ChromaDB Vector Search
+       |
+       v
+Relevant Knowledge
+       |
+       v
+Prompt + Retrieved Context
+       |
+       v
+Gemini
+       |
+       v
+Generated Answer
+       |
+       v
+Retrieved Sources
+
+
+==================================================
+PART 13 - ADDING YOUR OWN KNOWLEDGE
+==================================================
+
+You can add your own notes to:
+
+backend\knowledge
+
+Supported files:
+- .md
+- .txt
+
+Example:
+
+backend\knowledge\java_basics.md
+
+After adding the file, run:
+
+python backend/ingest.py
+
+Then restart Streamlit:
+
+python -m streamlit run backend/app.py
+
+
+==================================================
+PART 14 - NORMAL DAILY RUN
+==================================================
+
+You do NOT need to recreate the project every time.
+
+Every normal day:
+
+1. Open VS Code.
+2. Open CodePilot_AI_Complete.
+3. Open Terminal.
+4. Run:
+
+.venv\Scripts\Activate.ps1
+
+5. Run:
+
+python -m streamlit run backend/app.py
+
+6. Open:
+
+http://localhost:8501
+
+That's it.
+
+Only run:
+
+python backend/ingest.py
+
+when you change the knowledge base.
+
+
+==================================================
+PART 15 - STOP THE PROJECT
+==================================================
+
+In the VS Code terminal press:
+
+Ctrl + C
+
+This stops the Streamlit server.
+
+
+==================================================
+PART 16 - IMPORTANT
+==================================================
+
+Do not use the normal VS Code "Run Python File" button for
+backend\app.py.
+
+Use:
+
+python -m streamlit run backend/app.py
+
+Do not share your Gemini API key.
+
+Do not upload .env to GitHub.
+
+==================================================
+END OF GUIDE
+==================================================

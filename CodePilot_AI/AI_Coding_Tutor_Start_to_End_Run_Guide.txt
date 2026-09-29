@@ -1,0 +1,37 @@
+CODEPILOT AI — START TO END RUN GUIDE (WINDOWS)
+
+1) Install Python 3.11/3.12.
+2) Install Ollama if you want local AI.
+3) Open the CodePilot_AI folder in VS Code.
+4) Open a terminal in the project folder.
+5) Create environment:
+   python -m venv .venv
+6) Activate it:
+   PowerShell: .venv\Scripts\Activate.ps1
+   Command Prompt: .venv\Scripts\activate.bat
+7) Install packages:
+   python -m pip install -r requirements.txt
+8) Optional local Ollama model:
+   ollama pull qwen2.5-coder:7b
+9) Build local RAG index:
+   python backend/ingest.py
+10) Run app:
+   python -m streamlit run backend/app.py
+11) Open http://localhost:8501
+
+AI SETTINGS
+- Cloud AI APIs OFF = Ollama.
+- Cloud AI APIs ON = selected OpenAI / Gemini / Groq provider.
+- Enter API keys/model names in Settings.
+- Use "Test Active AI Connection" to verify the selected provider.
+- "Use local RAG knowledge" can be enabled with local or cloud AI.
+
+COMPILER REQUIREMENTS
+- Python: Python installed.
+- C/C++: GCC/G++ on PATH.
+- Java: javac and java on PATH.
+- JavaScript: Node.js on PATH.
+
+SECURITY
+- Only run trusted code in the local compiler.
+- For cloud deployment, use environment secrets for API keys.

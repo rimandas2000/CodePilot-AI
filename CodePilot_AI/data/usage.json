@@ -1,0 +1,16 @@
+{
+  "created_at": "",
+  "last_seen": 0,
+  "today": "",
+  "today_active_seconds": 0.0,
+  "total_active_seconds": 0.0,
+  "sessions": 0,
+  "lines_processed": 0,
+  "executions": 0,
+  "successful_runs": 0,
+  "failed_runs": 0,
+  "ai_uses": 0,
+  "questions": 0,
+  "pages_visited": 0,
+  "activity": []
+}
